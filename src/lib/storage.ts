@@ -30,7 +30,9 @@ export type VisitSubmission = {
   preferredDate: string;
   preferredTime: string;
   notes?: string;
-  status: "pendiente" | "confirmada" | "completada";
+  status: "pendiente" | "confirmada" | "completada" | "cancelada";
+  calendarEventId?: string;
+  calendarEventLink?: string;
 };
 
 export type ClientEvent = {
@@ -97,18 +99,46 @@ export async function addQuote(
 }
 
 export async function addVisit(
-  data: Omit<VisitSubmission, "id" | "createdAt" | "status">,
+  data: Omit<VisitSubmission, "id" | "createdAt" | "status"> & {
+    status?: VisitSubmission["status"];
+  },
 ) {
   const db = await readDb();
   const entry: VisitSubmission = {
     ...data,
     id: createId(),
     createdAt: new Date().toISOString(),
-    status: "pendiente",
+    status: data.status ?? "pendiente",
   };
   db.visits.unshift(entry);
   await writeDb(db);
   return entry;
+}
+
+export async function updateVisitStatus(
+  id: string,
+  status: VisitSubmission["status"],
+) {
+  const db = await readDb();
+  const visit = db.visits.find((entry) => entry.id === id);
+  if (!visit) return null;
+  visit.status = status;
+  await writeDb(db);
+  return visit;
+}
+
+export async function updateVisitCalendarMeta(
+  id: string,
+  calendarEventId: string,
+  calendarEventLink: string,
+) {
+  const db = await readDb();
+  const visit = db.visits.find((entry) => entry.id === id);
+  if (!visit) return null;
+  visit.calendarEventId = calendarEventId;
+  visit.calendarEventLink = calendarEventLink;
+  await writeDb(db);
+  return visit;
 }
 
 export async function getAllSubmissions() {

@@ -9,10 +9,14 @@ import { VisitForm } from "@/components/VisitForm";
 import { LocationSection } from "@/components/LocationSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { BrandProvider } from "@/components/BrandProvider";
+import { getBrandSettings } from "@/lib/site-settings";
 
-export default function Home() {
+export default async function Home() {
+  const brand = await getBrandSettings();
+
   return (
-    <>
+    <BrandProvider brand={brand}>
       <Header />
       <main>
         <Hero />
@@ -26,6 +30,6 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
-    </>
+    </BrandProvider>
   );
 }

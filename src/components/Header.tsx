@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { BRAND, buildWhatsAppMessage } from "@/lib/constants";
+import { useBrand, useWhatsApp } from "./BrandProvider";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
@@ -16,6 +16,8 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const brand = useBrand();
+  const whatsappHref = useWhatsApp("Hola, me gustaría información sobre sus eventos.");
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-brown-dark/90 backdrop-blur-md">
@@ -23,8 +25,8 @@ export function Header() {
         <a href="#inicio" className="flex items-center gap-3">
           <Logo className="h-11 w-11" />
           <div>
-            <p className="font-serif text-lg font-semibold text-cream">{BRAND.name}</p>
-            <p className="hidden text-xs text-gold-light sm:block">{BRAND.nameEn}</p>
+            <p className="font-serif text-lg font-semibold text-cream">{brand.name}</p>
+            <p className="hidden text-xs text-gold-light sm:block">{brand.nameEn}</p>
           </div>
         </a>
 
@@ -39,7 +41,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href={buildWhatsAppMessage("Hola, me gustaría información sobre sus eventos.")}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp px-5 py-2.5"
@@ -72,12 +74,12 @@ export function Header() {
               </a>
             ))}
             <a
-              href={buildWhatsAppMessage("Hola, me gustaría información sobre sus eventos.")}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp mt-2"
             >
-              WhatsApp {BRAND.whatsappDisplay}
+              WhatsApp {brand.whatsappDisplay}
             </a>
           </nav>
         </div>

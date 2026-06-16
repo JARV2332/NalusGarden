@@ -1,13 +1,20 @@
+"use client";
+
 import { MapPin, Phone } from "lucide-react";
-import { BRAND, buildWhatsAppMessage } from "@/lib/constants";
+import { useBrand, useWhatsApp } from "./BrandProvider";
 
 export function LocationSection() {
+  const brand = useBrand();
+  const whatsappHref = useWhatsApp("Hola, quisiera más información.");
+
   return (
     <section id="contacto" className="section-padding">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
         <div className="card-soft p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Contacto</p>
-          <h2 className="section-title">{BRAND.name} · {BRAND.nameEn}</h2>
+          <h2 className="section-title">
+            {brand.name} · {brand.nameEn}
+          </h2>
           <p className="section-subtitle">
             Visítanos, escríbenos o cotiza en línea. Seguimos atendiendo con el
             mismo cariño de siempre, ahora con una presencia digital completa.
@@ -19,12 +26,12 @@ export function LocationSection() {
               <div>
                 <p className="font-semibold text-brown-dark">Ubicación</p>
                 <a
-                  href={BRAND.mapsUrl}
+                  href={brand.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-brown-light underline-offset-4 hover:underline"
                 >
-                  {BRAND.location}
+                  {brand.location}
                 </a>
               </div>
             </div>
@@ -33,22 +40,22 @@ export function LocationSection() {
               <div>
                 <p className="font-semibold text-brown-dark">WhatsApp</p>
                 <a
-                  href={buildWhatsAppMessage("Hola, quisiera más información.")}
+                  href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-brown-light underline-offset-4 hover:underline"
                 >
-                  {BRAND.whatsappDisplay}
+                  {brand.whatsappDisplay}
                 </a>
               </div>
             </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={BRAND.facebook} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Facebook
             </a>
-            <a href={BRAND.instagram} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a href={brand.instagram} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Instagram
             </a>
             <a href="/admin" className="btn-primary">
@@ -62,8 +69,8 @@ export function LocationSection() {
 
         <div className="overflow-hidden rounded-[2rem] border border-gold/20 shadow-lg">
           <iframe
-            title={`Ubicación ${BRAND.nameEn}`}
-            src={BRAND.mapsEmbedUrl}
+            title={`Ubicación ${brand.nameEn}`}
+            src={brand.mapsEmbedUrl}
             className="h-full min-h-[420px] w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

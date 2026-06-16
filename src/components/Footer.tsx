@@ -1,15 +1,19 @@
+"use client";
+
 import { Logo } from "./Logo";
-import { BRAND, buildWhatsAppMessage } from "@/lib/constants";
+import { useBrand, useWhatsApp } from "./BrandProvider";
 
 export function Footer() {
+  const brand = useBrand();
+  const whatsappHref = useWhatsApp("Hola, quisiera información.");
   return (
     <footer className="border-t border-gold/20 bg-brown-dark px-4 py-12 text-cream sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center gap-4">
           <Logo className="h-12 w-12" />
           <div>
-            <p className="font-serif text-2xl">{BRAND.name}</p>
-            <p className="text-sm text-gold-light">{BRAND.nameEn}</p>
+            <p className="font-serif text-2xl">{brand.name}</p>
+            <p className="text-sm text-gold-light">{brand.nameEn}</p>
           </div>
         </div>
 
@@ -24,7 +28,7 @@ export function Footer() {
             Panel
           </a>
           <a
-            href={buildWhatsAppMessage("Hola, quisiera información.")}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gold-light"
@@ -35,7 +39,7 @@ export function Footer() {
       </div>
 
       <p className="mx-auto mt-8 max-w-7xl text-sm text-cream/60">
-        © {new Date().getFullYear()} {BRAND.name} · {BRAND.nameEn}. Todos los derechos reservados.
+        © {new Date().getFullYear()} {brand.name} · {brand.nameEn}. Todos los derechos reservados.
       </p>
     </footer>
   );

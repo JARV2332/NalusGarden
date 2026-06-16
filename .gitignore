@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local demo submissions
 /data/submissions.json
+/data/site-settings.json

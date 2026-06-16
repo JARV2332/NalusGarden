@@ -1,7 +1,11 @@
+"use client";
+
 import { ArrowRight, Sparkles } from "lucide-react";
-import { BRAND, buildWhatsAppMessage } from "@/lib/constants";
+import { useBrand, useWhatsApp } from "./BrandProvider";
 
 export function Hero() {
+  const brand = useBrand();
+  const quoteWhatsApp = useWhatsApp("Hola, quisiera cotizar un evento en Jardín de Nalu.");
   return (
     <section id="inicio" className="hero-gradient relative min-h-screen overflow-hidden pt-28">
       <div className="absolute inset-0 opacity-20">
@@ -17,13 +21,11 @@ export function Hero() {
           </div>
 
           <h1 className="font-serif text-5xl font-semibold leading-tight text-cream sm:text-6xl lg:text-7xl">
-            {BRAND.tagline}
+            {brand.tagline}
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85">
-            Bodas, quince años, bautizos, eventos empresariales y mucho más.
-            Paquetes todo incluido con el cariño, la elegancia y el detalle que
-            nos caracteriza.
+            {brand.heroDescription}
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -32,12 +34,12 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href={buildWhatsAppMessage("Hola, quisiera cotizar un evento en Jardín de Nalu.")}
+              href={quoteWhatsApp}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"
             >
-              WhatsApp {BRAND.whatsappDisplay}
+              WhatsApp {brand.whatsappDisplay}
             </a>
           </div>
 
@@ -58,7 +60,7 @@ export function Hero() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           <div className="gallery-pattern min-h-56 rounded-[2rem] border border-gold/20 p-8 shadow-2xl">
             <p className="text-sm uppercase tracking-[0.2em] text-gold-light">
-              {BRAND.name} · {BRAND.nameEn}
+              {brand.name} · {brand.nameEn}
             </p>
             <p className="mt-4 font-serif text-3xl text-cream">Celebraciones con elegancia natural</p>
           </div>

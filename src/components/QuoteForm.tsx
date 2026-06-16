@@ -4,7 +4,8 @@ import { FormEvent, useState } from "react";
 import { CalendarDays, LoaderCircle, Send } from "lucide-react";
 import { packages } from "@/data/packages";
 import { eventTypes } from "@/data/events";
-import { buildWhatsAppMessage } from "@/lib/constants";
+import { useBrand } from "./BrandProvider";
+import { buildWhatsAppUrl } from "@/lib/brand";
 
 type FormState = {
   name: string;
@@ -29,6 +30,7 @@ const initialState: FormState = {
 };
 
 export function QuoteForm() {
+  const brand = useBrand();
   const [form, setForm] = useState<FormState>(initialState);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
@@ -68,7 +70,7 @@ export function QuoteForm() {
 
       setSuccess("¡Listo! Recibimos tu solicitud. También puedes continuar por WhatsApp.");
       setForm(initialState);
-      window.open(buildWhatsAppMessage(whatsappMessage), "_blank");
+      window.open(buildWhatsAppUrl(brand.whatsapp, whatsappMessage), "_blank");
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Error inesperado.");
     } finally {

@@ -40,13 +40,17 @@ export function VisitForm() {
         body: JSON.stringify(form),
       });
 
-      const data = (await response.json()) as { ok?: boolean; message?: string };
+      const data = (await response.json()) as {
+        ok?: boolean;
+        message?: string;
+        calendarLinked?: boolean;
+      };
 
       if (!response.ok || !data.ok) {
         throw new Error(data.message ?? "No se pudo agendar la visita.");
       }
 
-      setSuccess("Visita solicitada. Te enviaremos confirmación y recordatorio por correo.");
+      setSuccess(data.message ?? "Visita solicitada correctamente.");
       setForm(initialState);
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Error inesperado.");
