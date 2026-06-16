@@ -71,7 +71,7 @@ export function VisitForm() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="card-soft mx-auto mt-10 max-w-3xl p-8">
+        <form onSubmit={handleSubmit} className="card-soft mx-auto mt-8 max-w-3xl p-5 sm:mt-10 sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-brown-dark">Nombre</label>

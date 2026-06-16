@@ -10,9 +10,9 @@ export function LocationSection() {
   return (
     <section id="contacto" className="section-padding">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
-        <div className="card-soft p-8">
+        <div className="card-soft p-5 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Contacto</p>
-          <h2 className="section-title">
+          <h2 className="section-title break-words">
             {brand.name} · {brand.nameEn}
           </h2>
           <p className="section-subtitle">
@@ -51,15 +51,12 @@ export function LocationSection() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Facebook
             </a>
             <a href={brand.instagram} target="_blank" rel="noopener noreferrer" className="btn-secondary">
               Instagram
-            </a>
-            <a href="/admin" className="btn-primary">
-              Panel interno
             </a>
             <a href="/portal/demo-nalu" className="btn-secondary">
               Portal de clientes
@@ -67,11 +64,11 @@ export function LocationSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-gold/20 shadow-lg">
+        <div className="overflow-hidden rounded-2xl border border-gold/20 shadow-lg sm:rounded-[2rem]">
           <iframe
             title={`Ubicación ${brand.nameEn}`}
             src={brand.mapsEmbedUrl}
-            className="h-full min-h-[420px] w-full"
+            className="h-[280px] w-full sm:h-full sm:min-h-[420px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

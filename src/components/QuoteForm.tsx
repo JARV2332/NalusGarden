@@ -103,7 +103,7 @@ export function QuoteForm() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="card-soft p-8">
+        <form onSubmit={handleSubmit} className="card-soft p-5 sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label className="mb-2 block text-sm font-semibold text-brown-dark">Nombre completo</label>

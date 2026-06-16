@@ -7,7 +7,7 @@ export function Hero() {
   const brand = useBrand();
   const quoteWhatsApp = useWhatsApp("Hola, quisiera cotizar un evento en Jardín de Nalu.");
   return (
-    <section id="inicio" className="hero-gradient relative min-h-screen overflow-hidden pt-28">
+    <section id="inicio" className="hero-gradient relative min-h-[100dvh] overflow-hidden pt-24 sm:pt-28">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute left-10 top-24 h-40 w-40 rounded-full bg-gold blur-3xl" />
         <div className="absolute bottom-20 right-10 h-56 w-56 rounded-full bg-gold-light blur-3xl" />
@@ -20,11 +20,11 @@ export function Hero() {
             Amatitlán, Guatemala
           </div>
 
-          <h1 className="font-serif text-5xl font-semibold leading-tight text-cream sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-4xl font-semibold leading-tight text-cream sm:text-5xl lg:text-6xl xl:text-7xl">
             {brand.tagline}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-cream/85 sm:mt-6 sm:text-lg">
             {brand.heroDescription}
           </p>
 
@@ -43,14 +43,14 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+          <div className="mt-8 grid grid-cols-1 gap-4 border-t border-white/10 pt-6 sm:mt-12 sm:grid-cols-3 sm:pt-8">
             {[
               { value: "2", label: "Espacios únicos" },
               { value: "Todo incluido", label: "Paquetes completos" },
               { value: "40+", label: "Invitados mínimo" },
             ].map((item) => (
-              <div key={item.label}>
-                <p className="font-serif text-2xl font-semibold text-gold-light">{item.value}</p>
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
+                <p className="font-serif text-xl font-semibold text-gold-light sm:text-2xl">{item.value}</p>
                 <p className="mt-1 text-sm text-cream/70">{item.label}</p>
               </div>
             ))}
@@ -58,19 +58,21 @@ export function Hero() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          <div className="gallery-pattern min-h-56 rounded-[2rem] border border-gold/20 p-8 shadow-2xl">
-            <p className="text-sm uppercase tracking-[0.2em] text-gold-light">
+          <div className="gallery-pattern min-h-48 rounded-[1.5rem] border border-gold/20 p-5 shadow-2xl sm:min-h-56 sm:rounded-[2rem] sm:p-8">
+            <p className="text-xs uppercase tracking-[0.2em] text-gold-light sm:text-sm">
               {brand.name} · {brand.nameEn}
             </p>
-            <p className="mt-4 font-serif text-3xl text-cream">Celebraciones con elegancia natural</p>
+            <p className="mt-3 font-serif text-2xl text-cream sm:mt-4 sm:text-3xl">
+              Celebraciones con elegancia natural
+            </p>
           </div>
-          <div className="grid gap-4 sm:col-span-2 lg:col-span-1 lg:grid-cols-2">
-            <div className="rounded-[1.75rem] border border-gold/20 bg-white/10 p-6 backdrop-blur-sm">
-              <p className="font-serif text-2xl text-gold-light">Q. 185</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="rounded-[1.5rem] border border-gold/20 bg-white/10 p-5 backdrop-blur-sm sm:rounded-[1.75rem] sm:p-6">
+              <p className="font-serif text-xl text-gold-light sm:text-2xl">Q. 185</p>
               <p className="mt-2 text-sm text-cream/80">Por persona · mínimo 40 invitados</p>
             </div>
-            <div className="rounded-[1.75rem] border border-gold/20 bg-white/10 p-6 backdrop-blur-sm">
-              <p className="font-serif text-2xl text-gold-light">Q. 199.99</p>
+            <div className="rounded-[1.5rem] border border-gold/20 bg-white/10 p-5 backdrop-blur-sm sm:rounded-[1.75rem] sm:p-6">
+              <p className="font-serif text-xl text-gold-light sm:text-2xl">Q. 199.99</p>
               <p className="mt-2 text-sm text-cream/80">Nalu&apos;s Lake · mínimo 50 invitados</p>
             </div>
           </div>

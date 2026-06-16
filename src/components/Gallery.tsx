@@ -2,7 +2,7 @@ const galleryItems = [
   {
     title: "Entrada y jardín principal",
     subtitle: "Jardín de Nalu",
-    className: "md:col-span-2 md:row-span-2 min-h-[420px]",
+    className: "md:col-span-2 md:row-span-2 min-h-[280px] sm:min-h-[360px] md:min-h-[420px]",
     gradient: "from-[#6b4f3a] via-[#4a3728] to-[#2f2118]",
   },
   {

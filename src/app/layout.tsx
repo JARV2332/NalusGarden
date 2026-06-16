@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: `${BRAND.name} / ${BRAND.nameEn} | ${BRAND.tagline}`,
   description:
     `${BRAND.nameEn} en Amatitlán, Guatemala. Paquetes todo incluido para bodas, quince años, bautizos y más.`,
+  metadataBase: new URL("https://nalus-garden.vercel.app"),
   openGraph: {
     title: `${BRAND.name} / ${BRAND.nameEn}`,
     description: BRAND.tagline,
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

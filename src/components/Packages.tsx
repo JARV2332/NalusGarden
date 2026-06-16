@@ -11,14 +11,14 @@ function PackageCard({ pkg }: { pkg: EventPackage }) {
 
   return (
     <article className="card-soft overflow-hidden">
-      <div className="bg-brown px-8 py-8 text-cream">
-        <p className="text-sm uppercase tracking-[0.2em] text-gold-light">{pkg.subtitle}</p>
-        <h3 className="mt-3 font-serif text-4xl">{pkg.name}</h3>
+      <div className="bg-brown px-5 py-6 text-cream sm:px-8 sm:py-8">
+        <p className="text-xs uppercase tracking-[0.2em] text-gold-light sm:text-sm">{pkg.subtitle}</p>
+        <h3 className="mt-2 font-serif text-3xl sm:mt-3 sm:text-4xl">{pkg.name}</h3>
         {pkg.highlight ? (
           <p className="mt-3 text-sm leading-relaxed text-cream/85">{pkg.highlight}</p>
         ) : null}
-        <div className="mt-6 flex items-end gap-2">
-          <span className="font-serif text-5xl text-gold-light">
+        <div className="mt-4 flex flex-wrap items-end gap-2 sm:mt-6">
+          <span className="font-serif text-4xl text-gold-light sm:text-5xl">
             Q. {pkg.pricePerPerson.toFixed(pkg.pricePerPerson % 1 === 0 ? 0 : 2)}
           </span>
           <span className="pb-2 text-sm text-cream/75">por persona</span>
@@ -26,7 +26,7 @@ function PackageCard({ pkg }: { pkg: EventPackage }) {
         <p className="mt-2 text-sm text-cream/75">Mínimo {pkg.minGuests} personas</p>
       </div>
 
-      <div className="p-8">
+      <div className="p-5 sm:p-8">
         <label className="block text-sm font-semibold text-brown-dark">
           Calcula tu inversión estimada
         </label>

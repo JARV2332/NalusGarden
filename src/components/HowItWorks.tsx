@@ -8,7 +8,7 @@ export function HowItWorks() {
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold-light">
             Cómo funciona
           </p>
-          <h2 className="font-serif text-4xl font-semibold sm:text-5xl">
+          <h2 className="font-serif text-3xl font-semibold sm:text-4xl lg:text-5xl">
             Simple, claro y con acompañamiento de principio a fin
           </h2>
         </div>
@@ -17,7 +17,7 @@ export function HowItWorks() {
           {howItWorks.map((step) => (
             <article
               key={step.step}
-              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:rounded-[2rem] sm:p-8"
             >
               <p className="font-serif text-5xl text-gold-light">{step.step}</p>
               <h3 className="mt-4 text-2xl font-semibold">{step.title}</h3>

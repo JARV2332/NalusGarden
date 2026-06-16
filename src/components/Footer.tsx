@@ -25,7 +25,7 @@ export function Footer() {
             Cotizar
           </a>
           <a href="/admin" className="hover:text-gold-light">
-            Panel
+            Admin
           </a>
           <a
             href={whatsappHref}

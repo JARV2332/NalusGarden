@@ -40,7 +40,7 @@ export function AdminLoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-cream px-4 py-10">
-      <div className="card-soft w-full max-w-md p-8">
+      <div className="card-soft w-full max-w-md p-5 sm:p-8">
         <div className="mb-8 text-center">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brown-dark text-gold">
             <LockKeyhole className="h-6 w-6" />

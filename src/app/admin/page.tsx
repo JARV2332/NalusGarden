@@ -150,17 +150,17 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-cream px-4 py-10 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-cream px-3 py-8 sm:px-4 sm:py-10 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Panel admin</p>
-            <h1 className="font-serif text-4xl text-brown-dark">Nalu&apos;s Garden</h1>
+            <h1 className="font-serif text-3xl text-brown-dark sm:text-4xl">Nalu&apos;s Garden</h1>
             <p className="mt-2 text-sm text-brown-light">
               Solicitudes, contenido del sitio y calendario de visitas.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <button type="button" onClick={() => void loadData()} className="btn-secondary">
               <RefreshCw className="h-4 w-4" />
               Actualizar
@@ -175,7 +175,7 @@ export default function AdminPage() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        <div className="-mx-1 mt-8 flex gap-2 overflow-x-auto px-1 pb-1">
           {[
             { id: "solicitudes" as const, label: "Solicitudes", icon: FileText },
             { id: "contenido" as const, label: "Contenido", icon: Settings2 },
@@ -185,7 +185,7 @@ export default function AdminPage() {
               key={id}
               type="button"
               onClick={() => setTab(id)}
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
+              className={`inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
                 tab === id
                   ? "bg-brown-dark text-cream"
                   : "bg-white text-brown-light hover:bg-cream-dark"
@@ -215,7 +215,7 @@ export default function AdminPage() {
                   </div>
                 ) : (
                   data.quotes.map((quote) => (
-                    <article key={quote.id} className="card-soft p-6">
+                    <article key={quote.id} className="card-soft p-5 sm:p-6">
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div>
                           <h3 className="font-semibold text-brown-dark">{quote.name}</h3>
@@ -256,7 +256,7 @@ export default function AdminPage() {
                   </div>
                 ) : (
                   data.visits.map((visit) => (
-                    <article key={visit.id} className="card-soft p-6">
+                    <article key={visit.id} className="card-soft p-5 sm:p-6">
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <div>
                           <h3 className="font-semibold text-brown-dark">{visit.name}</h3>
@@ -309,7 +309,7 @@ export default function AdminPage() {
         ) : null}
 
         {!loading && tab === "contenido" && settings ? (
-          <form onSubmit={handleSaveSettings} className="card-soft mt-10 space-y-4 p-8">
+          <form onSubmit={handleSaveSettings} className="card-soft mt-8 space-y-4 p-5 sm:mt-10 sm:p-8">
             <h2 className="font-serif text-2xl text-brown-dark">Editar contenido del sitio</h2>
             <p className="text-sm text-brown-light">
               Cambia textos de contacto y mensajes principales sin tocar código.
@@ -399,7 +399,7 @@ export default function AdminPage() {
 
         {!loading && tab === "calendario" ? (
           <section className="mt-10">
-            <div className="card-soft p-8">
+            <div className="card-soft p-5 sm:p-8">
               <h2 className="font-serif text-2xl text-brown-dark">Google Calendar</h2>
               {data.calendar.configured ? (
                 <>
