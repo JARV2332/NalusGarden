@@ -59,7 +59,7 @@ export default function AdminPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Panel interno</p>
             <h1 className="font-serif text-4xl text-brown-dark">Solicitudes y citas</h1>
             <p className="mt-2 text-sm text-brown-light">
-              Vista demo para que ella vea cotizaciones y visitas en un solo lugar.
+              Cotizaciones y visitas solicitadas desde el sitio web.
             </p>
           </div>
           <div className="flex gap-3">

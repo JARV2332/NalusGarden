@@ -3,7 +3,7 @@ import { BRAND, buildWhatsAppMessage } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section id="inicio" className="hero-gradient relative min-h-screen overflow-hidden pt-36">
+    <section id="inicio" className="hero-gradient relative min-h-screen overflow-hidden pt-28">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute left-10 top-24 h-40 w-40 rounded-full bg-gold blur-3xl" />
         <div className="absolute bottom-20 right-10 h-56 w-56 rounded-full bg-gold-light blur-3xl" />

@@ -55,7 +55,7 @@ export function LocationSection() {
               Panel interno
             </a>
             <a href="/portal/demo-nalu" className="btn-secondary">
-              Ver portal demo
+              Portal de clientes
             </a>
           </div>
         </div>

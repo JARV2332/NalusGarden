@@ -35,8 +35,7 @@ export function Footer() {
       </div>
 
       <p className="mx-auto mt-8 max-w-7xl text-sm text-cream/60">
-        © {new Date().getFullYear()} {BRAND.name}. Propuesta digital creada con cariño
-        para presentar y aprobar antes de publicar.
+        © {new Date().getFullYear()} {BRAND.name} · {BRAND.nameEn}. Todos los derechos reservados.
       </p>
     </footer>
   );

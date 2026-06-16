@@ -91,7 +91,7 @@ export function QuoteForm() {
             {[
               "Confirmación automática al enviar el formulario",
               "Integración directa con WhatsApp",
-              "Panel interno para que ella vea las solicitudes",
+              "Seguimiento de solicitudes desde el panel interno",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 text-sm text-brown-light">
                 <CalendarDays className="h-5 w-5 text-gold" />

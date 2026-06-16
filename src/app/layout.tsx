@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     description: BRAND.tagline,
     locale: "es_GT",
     type: "website",
+    images: [{ url: "/logo.png", alt: `${BRAND.name} / ${BRAND.nameEn}` }],
+  },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

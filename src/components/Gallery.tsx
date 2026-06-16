@@ -39,8 +39,7 @@ export function Gallery() {
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">Galería</p>
           <h2 className="section-title">Un vistazo al lugar de los mejores eventos</h2>
           <p className="section-subtitle">
-            Aquí van placeholders elegantes listos para reemplazar con las fotos
-            reales de Facebook e Instagram cuando tu ex jefa las apruebe.
+            Momentos reales de bodas, quince años y celebraciones en nuestros espacios.
           </p>
         </div>
 

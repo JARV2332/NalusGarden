@@ -5,7 +5,7 @@ import { BRAND } from "@/lib/constants";
 const phases = [
   {
     title: "Fase 1 — Sitio público",
-    status: "Lista en demo",
+    status: "Activo",
     items: [
       "Landing con eslogan oficial",
       "Paquetes Jardín de Nalu y Nalu's Lake",
@@ -16,17 +16,17 @@ const phases = [
   },
   {
     title: "Fase 2 — Operación",
-    status: "Base incluida",
+    status: "En progreso",
     items: [
       "Agenda de visitas",
       "Panel interno de solicitudes",
-      "Recordatorios por correo (conectar Resend)",
+      "Recordatorios por correo",
       "Calendario de fechas reservadas",
     ],
   },
   {
     title: "Fase 3 — Experiencia premium",
-    status: "Demo incluida",
+    status: "Próximamente",
     items: [
       "Portal privado del cliente",
       "Servicios contratados visibles",
@@ -42,19 +42,19 @@ export default function PresentacionPage() {
       <div className="mx-auto max-w-5xl">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-brown-light hover:text-brown">
           <ArrowLeft className="h-4 w-4" />
-          Volver al sitio demo
+          Volver al sitio
         </Link>
 
         <div className="mt-8 card-soft p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gold">
-            Resumen para presentar
+            Resumen del proyecto
           </p>
           <h1 className="mt-3 font-serif text-5xl text-brown-dark">{BRAND.name}</h1>
           <p className="mt-4 text-2xl text-brown-light">{BRAND.tagline}</p>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-brown-light">
-            Propuesta digital para mostrar el negocio con la misma calidad y cariño
-            de sus servicios, sin reemplazar WhatsApp sino organizando todo lo demás.
+            Presencia digital para organizar cotizaciones, visitas y seguimiento de
+            eventos, complementando la atención personal por WhatsApp.
           </p>
         </div>
 
@@ -83,16 +83,15 @@ export default function PresentacionPage() {
         <div className="mt-8 card-soft p-8">
           <div className="flex items-center gap-3">
             <Sparkles className="h-6 w-6 text-gold" />
-            <h2 className="font-serif text-3xl text-brown-dark">Qué necesitamos de ti para publicar</h2>
+            <h2 className="font-serif text-3xl text-brown-dark">Próximos pasos</h2>
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
               "Fotos reales del jardín y eventos",
               "Confirmación de servicios y precios",
-              "Logo oficial si lo desean usar",
               "Correo del negocio para notificaciones",
-              "Aprobación de textos y colores",
-              "Dominio deseado (ej. jardindenalu.com)",
+              "Integración con Google Calendar",
+              "Dominio personalizado",
             ].map((item) => (
               <li key={item} className="rounded-2xl bg-cream px-4 py-3 text-sm text-brown">
                 {item}

@@ -9,12 +9,10 @@ import { VisitForm } from "@/components/VisitForm";
 import { LocationSection } from "@/components/LocationSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ProposalBanner } from "@/components/ProposalBanner";
 
 export default function Home() {
   return (
     <>
-      <ProposalBanner />
       <Header />
       <main>
         <Hero />
