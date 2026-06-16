@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf7f2;
+  --foreground: #2f2118;
+  --brown-dark: #2f2118;
+  --brown: #4a3728;
+  --brown-light: #6b4f3a;
+  --gold: #c9a86c;
+  --gold-light: #e8d5b0;
+  --cream: #f5f0e8;
+  --cream-dark: #ebe3d6;
+  --whatsapp: #25d366;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brown-dark: var(--brown-dark);
+  --color-brown: var(--brown);
+  --color-brown-light: var(--brown-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-whatsapp: var(--whatsapp);
+  --font-sans: var(--font-lato);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lato), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 35%, white);
+}
+
+.section-padding {
+  @apply px-4 py-20 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply font-serif text-4xl font-semibold tracking-tight text-brown-dark sm:text-5xl;
+}
+
+.section-subtitle {
+  @apply mt-4 max-w-2xl text-lg leading-relaxed text-brown-light;
+}
+
+.card-soft {
+  @apply rounded-3xl border border-gold/20 bg-white/80 shadow-[0_20px_60px_rgba(47,33,24,0.08)] backdrop-blur-sm;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brown px-6 py-3 text-sm font-semibold text-cream transition hover:bg-brown-dark;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-transparent px-6 py-3 text-sm font-semibold text-brown transition hover:bg-cream;
+}
+
+.btn-whatsapp {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110;
+}
+
+.input-field {
+  @apply w-full rounded-2xl border border-gold/25 bg-white px-4 py-3 text-brown outline-none transition placeholder:text-brown-light/60 focus:border-gold focus:ring-2 focus:ring-gold/20;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at top right, rgba(201, 168, 108, 0.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(74, 55, 40, 0.18), transparent 35%),
+    linear-gradient(135deg, #2f2118 0%, #4a3728 45%, #6b4f3a 100%);
+}
+
+.gallery-pattern {
+  background-image:
+    linear-gradient(rgba(47, 33, 24, 0.15), rgba(47, 33, 24, 0.45)),
+    radial-gradient(circle at 20% 20%, rgba(201, 168, 108, 0.35), transparent 40%),
+    linear-gradient(160deg, #6b4f3a, #2f2118);
 }
